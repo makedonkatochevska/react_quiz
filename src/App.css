@@ -1,0 +1,21 @@
+body {
+  font-family: arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 45px;
+  text-transform: uppercase;
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 20px;
+  text-transform: uppercase;
+}
