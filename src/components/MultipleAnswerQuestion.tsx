@@ -24,9 +24,10 @@ export default function MultipleAnswerQuestion({
     >
       {questionData.question}
       <div className={style.answerButtonContainer}>
-        {questionData.shuffledAnswers.map((answer) => {
+        {questionData.shuffledAnswers.map((answer, index) => {
           return (
             <button
+              key={`${answer}${index}`}
               className={style.answerButton}
               onClick={() => {
                 handleAnswer(questionData.question, answer);

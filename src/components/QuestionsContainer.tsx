@@ -2,38 +2,37 @@ import { useEffect, useState } from "react";
 import { DATA_URL } from "../constants/dataUrl";
 import type { QuestionTypes } from "../types/QuestionTypes";
 import MultipleAnswerQuestion from "./MultipleAnswerQuestion";
-import { localData } from "../data/data";
 import style from "../styles/questions.module.scss";
 import ResultsContainer from "./ResultsContainer";
+import Loading from "./Loading";
+import ErrorComponent from "./ErrorComponent";
 
 export default function QuestionsContainer() {
-  const [data, setData] = useState<QuestionTypes[]>(
-    localData.results.map((q) => {
-      const allAnswers = [q.correct_answer, ...q.incorrect_answers];
+  const [data, setData] = useState<QuestionTypes[]>([]);
 
-      const shuffledAnswers = allAnswers.sort(() => Math.random() - 0.5);
-
-      return {
-        ...q,
-        isQuestionCorrect: undefined,
-        selectedAnswer: undefined,
-        shuffledAnswers: shuffledAnswers,
-      };
-    })
-  );
-
-  /*useEffect(() => {
+  useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch(DATA_URL);
         const data = await response.json();
-        setData(data.results);
+        const processedResults = data.results.map((q: QuestionTypes) => {
+          const allAnswers = [q.correct_answer, ...q.incorrect_answers];
+
+          const shuffledAnswers = allAnswers.sort(() => Math.random() - 0.5);
+          return {
+            ...q,
+            isQuestionCorrect: undefined,
+            selectedAnswer: undefined,
+            shuffledAnswers: shuffledAnswers,
+          };
+        });
+        setData(processedResults);
       } catch (error) {
-        console.log("error");
+        <ErrorComponent />;
       }
     };
     fetchData();
-  }, []);*/
+  }, []);
 
   useEffect(() => {
     console.log("Updated data:", data);
@@ -89,7 +88,7 @@ export default function QuestionsContainer() {
             />
           ))
         ) : (
-          <p>Loading questions...</p>
+          <Loading />
         )}
       </div>
     </>
