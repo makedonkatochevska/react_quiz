@@ -26,7 +26,7 @@ export default function QuestionsContainer() {
       {data && data.length > 0 ? (
         data.map((questionItem) => (
           <MultipleAnswerQuestion
-            data={questionItem}
+            questionData={questionItem}
             key={questionItem.question}
           />
         ))
