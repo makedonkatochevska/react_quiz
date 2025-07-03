@@ -66,7 +66,7 @@ export default function QuestionsContainer() {
     return data.filter((q) => q.isQuestionCorrect === true).length;
   };
 
-  const handleIncorectAnswers = () => {
+  const handleIncorrectAnswers = () => {
     return data.filter((q) => q.isQuestionCorrect === false).length;
   };
 
@@ -76,7 +76,7 @@ export default function QuestionsContainer() {
       <ResultsContainer
         remainingQuestions={handleRemainingQuestions()}
         correctAnswers={handleCorrectAnswers()}
-        incorrectAnswers={handleIncorectAnswers()}
+        incorrectAnswers={handleIncorrectAnswers()}
         totalQuestions={data.length}
       />
       <div className={style.questionsContainer}>
