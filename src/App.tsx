@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./App.css";
+import "./App.module.scss";
 import QuizPage from "./pages/QuizPage";
 import { ROUTES } from "./routes/Routes";
 import ErrorPage from "./pages/ErrorPage";
@@ -13,7 +13,6 @@ function App() {
           <Route path={ROUTES.errorPage} element={<ErrorPage />}></Route>
         </Routes>
       </BrowserRouter>
-      <QuizPage />
     </>
   );
 }
