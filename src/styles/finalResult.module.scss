@@ -1,6 +1,7 @@
 .finalResultContainer {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(4px);
@@ -15,5 +16,17 @@
 
   @media (max-width: 768px) {
     width: 90%;
+  }
+
+  .restartBtn {
+    padding: 10px 20px;
+    width: 50%;
+    border-radius: 8px;
+    background-color: #2b2b2b;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+    border: 3px solid #2b2b2b;
+    cursor: pointer;
   }
 }

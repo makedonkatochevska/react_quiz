@@ -17,6 +17,7 @@ export default function FinalResult({
       <div>{icon}</div>
       <h2>Your Result</h2>
       <h3>{`${correctAnswers} / ${totalQuestions}`}</h3>
+      <button className={style.restartBtn}>START NEW QUIZ</button>
     </div>
   );
 }
