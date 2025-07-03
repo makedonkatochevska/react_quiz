@@ -13,6 +13,7 @@ export default function QuestionsContainer() {
   const [data, setData] = useState<QuestionTypes[]>([]);
   const [showFinalLoader, setShowFinalLoader] = useState(false);
   const [showFinalResult, setShowFinalResult] = useState(false);
+  const [restartCount, setRestartCount] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,12 +32,13 @@ export default function QuestionsContainer() {
           };
         });
         setData(processedResults);
+        window.scrollTo({ top: 0, behavior: "smooth" });
       } catch (error) {
         <ErrorComponent />;
       }
     };
     fetchData();
-  }, []);
+  }, [restartCount]);
 
   useEffect(() => {
     if (handleRemainingQuestions() === 0 && data.length > 1) {
@@ -81,6 +83,12 @@ export default function QuestionsContainer() {
     return data.filter((q) => q.isQuestionCorrect === false).length;
   };
 
+  const handleReset = () => {
+    setShowFinalLoader(false);
+    setShowFinalResult(false);
+    setRestartCount((prev) => prev + 1);
+  };
+
   return (
     <>
       <h1>Welcome to the Movie Quiz!</h1>
@@ -110,6 +118,7 @@ export default function QuestionsContainer() {
       )}
       {showFinalResult && (
         <FinalResult
+          handleReset={handleReset}
           totalQuestions={data.length}
           correctAnswers={handleCorrectAnswers()}
           icon={
