@@ -5,6 +5,10 @@
   gap: 20px;
   width: 50%;
   margin-inline: auto;
+
+  @media (max-width: 768px) {
+    width: 90%;
+  }
 }
 
 .question {
@@ -22,6 +26,10 @@
   justify-content: center;
   gap: 15px;
   margin-top: 15px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 }
 
 .answerButton {

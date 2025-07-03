@@ -5,11 +5,19 @@
 .resultsContainer {
   display: flex;
   gap: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   color: white;
   border: 1px solid white;
   margin-bottom: 30px;
   padding: 10px;
   border-radius: 10px;
+
+  @media (max-width: 465px) {
+    flex-direction: column;
+    align-items: center;
+  }
 
   p {
     margin-bottom: 0;
