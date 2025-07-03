@@ -72,6 +72,7 @@ export default function QuestionsContainer() {
 
   return (
     <>
+      <h1>Welcome to the Movie Quiz!</h1>
       <ResultsContainer
         remainingQuestions={handleRemainingQuestions()}
         correctAnswers={handleCorrectAnswers()}
