@@ -6,5 +6,6 @@ export type QuestionTypes = {
   correct_answer: string;
   incorrect_answers: string[];
   isQuestionCorrect?: boolean;
+  selectedAnswer?: string;
   shuffledAnswers: string[];
 };

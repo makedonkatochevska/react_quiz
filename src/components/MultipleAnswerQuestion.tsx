@@ -31,6 +31,15 @@ export default function MultipleAnswerQuestion({
               onClick={() => {
                 handleAnswer(questionData.question, answer);
               }}
+              disabled={questionData.isQuestionCorrect !== undefined}
+              style={{
+                backgroundColor:
+                  questionData.selectedAnswer === answer ? "white" : undefined,
+                cursor:
+                  questionData.isQuestionCorrect !== undefined
+                    ? "not-allowed"
+                    : "pointer",
+              }}
             >
               {answer}
             </button>

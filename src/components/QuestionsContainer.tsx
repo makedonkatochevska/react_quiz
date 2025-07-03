@@ -15,6 +15,7 @@ export default function QuestionsContainer() {
       return {
         ...q,
         isQuestionCorrect: undefined,
+        selectedAnswer: undefined,
         shuffledAnswers: shuffledAnswers,
       };
     })
@@ -45,12 +46,14 @@ export default function QuestionsContainer() {
         return {
           ...q,
           isQuestionCorrect: answer === q.correct_answer,
+          selectedAnswer: answer,
         };
       }
       return q;
     });
 
     setData(updatedQuestionData);
+
     console.log("AFTER CLICK", data);
   };
 
