@@ -9,7 +9,11 @@ import ErrorComponent from "./ErrorComponent";
 import FinalResult from "./FinalResult";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
-export default function QuestionsContainer() {
+interface Prop {
+  quizInfo: string;
+}
+
+export default function QuestionsContainer({ quizInfo }: Prop) {
   const [data, setData] = useState<QuestionTypes[]>([]);
   const [showFinalLoader, setShowFinalLoader] = useState(false);
   const [showFinalResult, setShowFinalResult] = useState(false);
@@ -18,7 +22,9 @@ export default function QuestionsContainer() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(DATA_URL.movieQuiz);
+        const response = await fetch(
+          DATA_URL[quizInfo as keyof typeof DATA_URL]
+        );
         const data = await response.json();
         const processedResults = data.results.map((q: QuestionTypes) => {
           const allAnswers = [q.correct_answer, ...q.incorrect_answers];

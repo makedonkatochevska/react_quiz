@@ -1,22 +1,25 @@
-import React from "react";
 import Card from "./Card";
 import style from "../styles/cards.module.scss";
 
-import banner from "../assets/images/moviesBanner.jpg";
 import { BANNER_IMAGES } from "../constants/bannerImages";
+import { useNavigate } from "react-router-dom";
 
 export default function CardContainer() {
+  const navigate = useNavigate();
+
   return (
     <div className={style.cardsContainer}>
       <Card
         title="Movie Quiz"
         background={{ backgroundImage: `url(${BANNER_IMAGES.movieQuiz})` }}
+        onClick={() => navigate("/quiz/movieQuiz")}
       />
       <Card
         title="TV Quiz"
         background={{ backgroundImage: `url(${BANNER_IMAGES.tvQuiz})` }}
+        onClick={() => navigate("/quiz/tvQuiz")}
       />
-      <Card
+      {/*<Card
         title="Books Quiz"
         background={{ backgroundImage: `url(${BANNER_IMAGES.tvQuiz})` }}
       />
@@ -35,7 +38,7 @@ export default function CardContainer() {
       <Card
         title="History Quiz"
         background={{ backgroundImage: `url(${BANNER_IMAGES.historyQuiz})` }}
-      />
+      /> */}
     </div>
   );
 }

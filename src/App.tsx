@@ -5,7 +5,7 @@ import { ROUTES } from "./routes/Routes";
 import ErrorPage from "./pages/ErrorPage";
 import HomePage from "./pages/HomePage";
 
-import { bannerImages } from "./constants/bannerImages";
+import { BANNER_IMAGES } from "./constants/bannerImages";
 function App() {
   return (
     <>
@@ -16,12 +16,12 @@ function App() {
             element={
               <HomePage
                 background={{
-                  backgroundImage: `url(${bannerImages.home})`,
+                  backgroundImage: `url(${BANNER_IMAGES.home})`,
                 }}
               />
             }
           ></Route>
-          <Route path={ROUTES.quizPage} element={<QuizPage />}></Route>
+          <Route path="/quiz/:quizType" element={<QuizPage />} />
           <Route path={ROUTES.errorPage} element={<ErrorPage />}></Route>
         </Routes>
       </BrowserRouter>
