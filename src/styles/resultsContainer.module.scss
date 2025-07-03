@@ -1,0 +1,14 @@
+.resultsContainer {
+  display: flex;
+  gap: 20px;
+  color: white;
+  border: 1px solid white;
+  margin-bottom: 30px;
+  margin-inline: 20px;
+  padding: 10px;
+  border-radius: 10px;
+
+  p {
+    margin-bottom: 0;
+  }
+}
