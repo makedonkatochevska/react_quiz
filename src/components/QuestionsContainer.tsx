@@ -76,6 +76,7 @@ export default function QuestionsContainer() {
         remainingQuestions={handleRemainingQuestions()}
         correctAnswers={handleCorrectAnswers()}
         incorrectAnswers={handleIncorectAnswers()}
+        totalQuestions={data.length}
       />
       <div className={style.questionsContainer}>
         {data && data.length > 0 ? (
