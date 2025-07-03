@@ -1,12 +1,16 @@
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-import React from "react";
 
-export default function Loading() {
+interface Prop {
+  dimensions?: object;
+}
+
+export default function Loading({ dimensions }: Prop) {
   return (
     <DotLottieReact
-      src="https://lottie.host/ed68df4c-020f-4117-a1ec-c8fb41b333f8/ESMq8BCYYe.lottie"
+      src="https://lottie.host/d2365c54-394e-4811-8705-a24ab0611181/AVRgrq7Jd7.lottie"
       loop
       autoplay
+      style={dimensions}
     />
   );
 }

@@ -11,6 +11,8 @@ import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 export default function QuestionsContainer() {
   const [data, setData] = useState<QuestionTypes[]>([]);
+  const [showFinalLoader, setShowFinalLoader] = useState(false);
+  const [showFinalResult, setShowFinalResult] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,7 +39,15 @@ export default function QuestionsContainer() {
   }, []);
 
   useEffect(() => {
-    console.log("Updated data:", data);
+    if (handleRemainingQuestions() === 0 && data.length > 1) {
+      setShowFinalLoader(true);
+      const timeout = setTimeout(() => {
+        setShowFinalLoader(false);
+        setShowFinalResult(true);
+      }, 5000);
+
+      return () => clearTimeout(timeout);
+    }
   }, [data]);
 
   const handleAnswer = (question: string, answer: string) => {
@@ -93,7 +103,12 @@ export default function QuestionsContainer() {
           <Loading />
         )}
       </div>
-      {handleRemainingQuestions() === 0 && (
+      {showFinalLoader && (
+        <Loading
+          dimensions={{ width: "150px", height: "150px", marginInline: "auto" }}
+        />
+      )}
+      {showFinalResult && (
         <FinalResult
           totalQuestions={data.length}
           correctAnswers={handleCorrectAnswers()}
