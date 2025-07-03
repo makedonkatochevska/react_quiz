@@ -6,6 +6,8 @@ import style from "../styles/questions.module.scss";
 import ResultsContainer from "./ResultsContainer";
 import Loading from "./Loading";
 import ErrorComponent from "./ErrorComponent";
+import FinalResult from "./FinalResult";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 export default function QuestionsContainer() {
   const [data, setData] = useState<QuestionTypes[]>([]);
@@ -91,6 +93,27 @@ export default function QuestionsContainer() {
           <Loading />
         )}
       </div>
+      {handleRemainingQuestions() === 0 && (
+        <FinalResult
+          totalQuestions={data.length}
+          correctAnswers={handleCorrectAnswers()}
+          icon={
+            handleCorrectAnswers() > data.length / 2 ? (
+              <DotLottieReact
+                src="https://lottie.host/4831b8df-6f54-4e06-ba6e-b8ad5ca9e28d/R8AQm5hCrq.lottie"
+                loop
+                autoplay
+              />
+            ) : (
+              <DotLottieReact
+                src="https://lottie.host/d62b2de5-46f5-4f5d-b790-d4bf710fa41b/YOlE1COYz7.lottie"
+                loop
+                autoplay
+              />
+            )
+          }
+        />
+      )}
     </>
   );
 }
