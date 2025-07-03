@@ -10,6 +10,12 @@ export default function MultipleAnswerQuestion({
   questionData,
   handleAnswer,
 }: Props) {
+  function decodeHtml(html: string) {
+    const txt = document.createElement("textarea");
+    txt.innerHTML = html;
+    return txt.value;
+  }
+
   return (
     <div
       className={style.question}
@@ -22,7 +28,7 @@ export default function MultipleAnswerQuestion({
             : undefined,
       }}
     >
-      {questionData.question}
+      {decodeHtml(questionData.question)}
       <div className={style.answerButtonContainer}>
         {questionData.shuffledAnswers.map((answer, index) => {
           return (
