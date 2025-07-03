@@ -1,5 +1,5 @@
 import QuestionsContainer from "../components/QuestionsContainer";
-import style from "../styles/quizPage.module.scss";
+import style from "../styles/pages.module.scss";
 
 export default function QuizPage() {
   return (

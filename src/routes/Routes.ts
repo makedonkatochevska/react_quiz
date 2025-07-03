@@ -1,4 +1,5 @@
 export const ROUTES = {
-  quizPage: "/",
+  homePage: "/",
+  quizPage: "quizPage",
   errorPage: "*",
 };

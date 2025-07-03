@@ -18,7 +18,7 @@ export default function QuestionsContainer() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(DATA_URL);
+        const response = await fetch(DATA_URL.movieQuiz);
         const data = await response.json();
         const processedResults = data.results.map((q: QuestionTypes) => {
           const allAnswers = [q.correct_answer, ...q.incorrect_answers];
