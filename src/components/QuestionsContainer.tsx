@@ -61,8 +61,8 @@ export default function QuestionsContainer({ quizInfo }: Prop) {
   }, [data]);
 
   const handleAnswer = (question: string, answer: string) => {
-    const playCorrect = useSound("../../public/Sounds/correctSound.wav");
-    const playWrong = useSound("../../public/Sounds/wrongSound.wav");
+    const playCorrect = useSound("/Sounds/correctSound.wav");
+    const playWrong = useSound("/Sounds/wrongSound.wav");
 
     if (answer === data.find((q) => q.question === question)?.correct_answer) {
       playCorrect();
