@@ -53,7 +53,7 @@ The app dynamically loads quiz data based on user selection, supports answer val
 
 Check out the live demo of the Quiz:
 
-👉 [Check it Live](https://react-addcontacttolist-makedonkat.netlify.app/)
+👉 [Check it Live](https://react-quiz-app-makedonkat.netlify.app/)
 
 ---
 
@@ -65,18 +65,21 @@ To run this project locally, follow the steps below:
 
 1. Clone the repository:
 
-bash
+```bash
 git clone https://github.com/makedonkatochevska/react_quiz.git .
+```
 
 2. Install dependencies:
 
-bash
+```bash
 npm install
+```
 
 3. Start the development server:
 
-bash
+```bash
 npm run dev
+```
 
 ---
 
