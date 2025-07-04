@@ -2,14 +2,14 @@
   background-position: center;
   background-size: cover;
   background-blend-mode: multiply;
-  background-attachment: fixed;
+  //background-attachment: fixed;
   background-color: rgba(0, 0, 0, 0.7);
   padding-block: 50px;
   min-height: 100vh;
 
-  @media (max-width: 768px) {
+  /*@media (max-width: 768px) {
     .pageContainer {
-      background-attachment: scroll; /* or just remove this line */
+      background-attachment: scroll; 
     }
-  }
+  }*/
 }
