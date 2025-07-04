@@ -9,6 +9,7 @@ import ErrorComponent from "./ErrorComponent";
 import FinalResult from "./FinalResult";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { Link } from "react-router-dom";
+import useSound from "../utils/useSound";
 
 interface Prop {
   quizInfo: string;
@@ -60,7 +61,14 @@ export default function QuestionsContainer({ quizInfo }: Prop) {
   }, [data]);
 
   const handleAnswer = (question: string, answer: string) => {
-    console.log(question, answer);
+    const playCorrect = useSound("../../public/Sounds/correctSound.wav");
+    const playWrong = useSound("../../public/Sounds/wrongSound.wav");
+
+    if (answer === data.find((q) => q.question === question)?.correct_answer) {
+      playCorrect();
+    } else {
+      playWrong();
+    }
 
     const updatedQuestionData = data.map((q) => {
       if (q.question === question) {
