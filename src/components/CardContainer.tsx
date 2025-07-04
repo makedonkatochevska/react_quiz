@@ -19,26 +19,31 @@ export default function CardContainer() {
         background={{ backgroundImage: `url(${BANNER_IMAGES.tvQuiz})` }}
         onClick={() => navigate("/quiz/tvQuiz")}
       />
-      {/*<Card
+
+      <Card
         title="Books Quiz"
-        background={{ backgroundImage: `url(${BANNER_IMAGES.tvQuiz})` }}
+        background={{ backgroundImage: `url(${BANNER_IMAGES.booksQuiz})` }}
+        onClick={() => navigate("/quiz/booksQuiz")}
       />
       <Card
         title="Computer Science Quiz"
         background={{
           backgroundImage: `url(${BANNER_IMAGES.computerScienceQuiz})`,
         }}
+        onClick={() => navigate("/quiz/computerScienceQuiz")}
       />
       <Card
         title="Celebrities Quiz"
         background={{
           backgroundImage: `url(${BANNER_IMAGES.celebritiesQuiz})`,
         }}
+        onClick={() => navigate("/quiz/celebritiesQuiz")}
       />
       <Card
         title="History Quiz"
         background={{ backgroundImage: `url(${BANNER_IMAGES.historyQuiz})` }}
-      /> */}
+        onClick={() => navigate("/quiz/historyQuiz")}
+      />
     </div>
   );
 }

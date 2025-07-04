@@ -97,7 +97,7 @@ export default function QuestionsContainer({ quizInfo }: Prop) {
 
   return (
     <>
-      <h1>Welcome to the Movie Quiz!</h1>
+      <h1>Welcome to the {quizInfo.replace(/([A-Z])/g, " $1")}</h1>
       <ResultsContainer
         remainingQuestions={handleRemainingQuestions()}
         correctAnswers={handleCorrectAnswers()}
