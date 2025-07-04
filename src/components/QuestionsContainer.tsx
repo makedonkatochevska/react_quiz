@@ -8,6 +8,7 @@ import Loading from "./Loading";
 import ErrorComponent from "./ErrorComponent";
 import FinalResult from "./FinalResult";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { Link } from "react-router-dom";
 
 interface Prop {
   quizInfo: string;
@@ -97,6 +98,9 @@ export default function QuestionsContainer({ quizInfo }: Prop) {
 
   return (
     <>
+      <Link to="/" className={style.backBtn}>
+        <i className="fas fa-arrow-left"></i> Back to main menu
+      </Link>
       <h1>Welcome to the {quizInfo.replace(/([A-Z])/g, " $1")}</h1>
       <ResultsContainer
         remainingQuestions={handleRemainingQuestions()}

@@ -40,3 +40,27 @@
   outline: none;
   border: none;
 }
+
+.backBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-left: 20px;
+  margin-bottom: 30px;
+  color: #ffff;
+  background-color: #2b2b2b;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+
+  i {
+    font-size: 18px;
+  }
+
+  &:hover {
+    background-color: #444;
+  }
+}
