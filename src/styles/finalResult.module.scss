@@ -18,9 +18,14 @@
     width: 90%;
   }
 
-  .restartBtn {
+  .btnContainer {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .btn {
     padding: 10px 20px;
-    width: 50%;
     border-radius: 8px;
     background-color: #2b2b2b;
     border-radius: 10px;

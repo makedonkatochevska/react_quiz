@@ -48,7 +48,7 @@ export default function MultipleAnswerQuestion({
                     : "pointer",
               }}
             >
-              {answer}
+              {decodeHtml(answer)}
             </button>
           );
         })}
